@@ -11,3 +11,5 @@ sales summaries.
 
 div 2 b ( aligned on right )
 deals for custom web designs.
+
+layout divs according to twiter bootstrap classes
