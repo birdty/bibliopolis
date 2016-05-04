@@ -1,0 +1,13 @@
+Purpose: describe the layout for the bibliopolis administrative site dashboard.
+
+div 1 a ( aligned on left )
+A summary of books in the store,  perhaps count of each category.
+
+div 1 b ( aligned on right )
+learning center which describes how to use the store builder.
+
+div 2 a ( aligned on left ) 
+sales summaries.
+
+div 2 b ( aligned on right )
+deals for custom web designs.
