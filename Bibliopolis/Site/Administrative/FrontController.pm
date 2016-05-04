@@ -12,6 +12,12 @@ sub request
   return @_ ? $self->{'parameters'}->{'request'} = shift : $self->{'parameters'}->{'request'};
 }
 
+sub parameters
+{
+  my $self = shift;
+  return @_ ? $self->{'parameters'} = shift : $self->{'parameters'};
+}
+
 sub process_request
 {
   my $self = shift;
@@ -52,13 +58,20 @@ sub process_request
 
     no strict 'refs';
 
-    eval("require $controller_class_name;");
+    my $loaded = eval("require $controller_class_name;");
 
-    my $controller = $controller_class_name->new();
+    if ( ! $loaded )
+    {
+	print("Content-type: text/plain\n\n");
+	print("Page Not Found.");
+	return;
+    }	
   
-    $controller->execute($action);
+    my $controller = $controller_class_name->new($self->parameters());
 
     use strict 'refs';
+  
+    $controller->execute($action);
 
   }
 

@@ -4,20 +4,38 @@ use base qw(Bibliopolis::Site::Administrative);
 
 sub default
 {
+  my $self = shift;
+
   print("Content-type: text/html\n\n");
-  print qq[hi];
+  print qq[My Default];
+}
+
+sub login
+{
+  my $self = shift;
+
+  print("Content-type: text/plain\n\n");
+  print("login..");
+ 
 }
 
 sub available
 {
   my ($self, $action) = @_;
-   
-  if ( $action eq 'default' )
+
+  my %allowed_actions = (
+      'default' => 1,
+      'login' => 1
+  );
+  
+  if ( $allowed_actions{$action} )
   {
     return 1;
   }
-
-  return 0;
+  else
+  {
+    return 0;
+  }
 }
 
 
