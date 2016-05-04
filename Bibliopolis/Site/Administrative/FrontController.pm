@@ -1,4 +1,4 @@
-package Bibilopolis::Site::Administrative::FrontController;
+package Bibliopolis::Site::Administrative::FrontController;
 
 sub new
 {
@@ -16,23 +16,52 @@ sub process_request
 {
   my $self = shift;
 
-  my @parts = split(/\//, $self->request());
+  my $request = $self->request();
+  
+  $request =~ s/^\///g;
 
-  if ( @parts )
+  my @parts;
+
+  @parts = split(/\//, $request);
+
+  my $action;
+
+  if ( scalar(@parts) <= 1 )
   {
-    my $action = pop(@parts);
-
-    if ( $action )
-    {
-      my $controller_class_name = join('::', map { ucfirst($_) } @parts);
-
-      require $controller_class_name;
-
-      my $controller = $controller_class_name->new();
-
-      $controller_class_name->execute($action);
-    }
+      $action = 'default';
   }
+  else
+  {
+      $action = pop(@parts);
+  }
+  
+  if ( $action )
+  {
+    my $prefix = 'Bibliopolis::Site::Administrative::';
+
+    my $controller_class_name = $prefix;
+
+    if ( scalar(@parts) == 0 ) 
+    {
+      $controller_class_name .= 'Index';
+    }
+    else
+    {
+	$controller_class_name .= join('::', map { ucfirst($_) } @parts);
+    }
+
+    no strict 'refs';
+
+    eval("require $controller_class_name;");
+
+    my $controller = $controller_class_name->new();
+  
+    $controller->execute($action);
+
+    use strict 'refs';
+
+  }
+
 }
 
 1;
