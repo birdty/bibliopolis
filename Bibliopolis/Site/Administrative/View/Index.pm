@@ -5,7 +5,18 @@ sub new
 {
   my($class, $args_href) = @_;
 
-  return bless $args_href, $class;
+  my $object;
+
+  if ( $args_href )
+  {
+      $object = $args_href;
+  }
+  else 
+  {
+      $object = {};
+  }
+
+  return $object, $class;
 }
 
 sub default

@@ -16,7 +16,6 @@ sub default
   });
 
   $view->render({'method' => 'default'});
-
 }
 
 sub login

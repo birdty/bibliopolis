@@ -5,9 +5,9 @@ sub new
   my($class, $args_href) = @_;
 
   my $object = bless {
-      'parameters' => $args_href->{'parameters'},
-      'console' => $args_href->{'console'},
-      'view_type' => $args_href->{'view_type'}
+      'parameters'	=> $args_href->{'parameters'},
+      'console' 	=> $args_href->{'console'},
+      'view_type'	=> $args_href->{'view_type'}
   }, $class;
 
   return $object;
