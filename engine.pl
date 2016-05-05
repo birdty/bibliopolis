@@ -5,6 +5,7 @@
 package main;
 
 use CGI;
+use IO::File;
 
 run();
 
@@ -29,15 +30,37 @@ sub run
   # this will be wrapped and no knowledge of cgi will be exposed to the action 
   # that is called from the front controller.
 
-  my $fc = Bibliopolis::Site::Administrative::FrontController->new(
-    {
-      'parameters' => $parameters,
-      'cgi' => $cgi
-    }
-  );
+  my $console;
+  my $view_type;
+
+  if ( $ENV{'HTTP_HOST'} ) {
+    require Bibliopolis::Console::HTML;
+    
+    my $fh = new IO::File "console_template.html", "r";
+
+    my $html_template = join("\n", <$fh>);
+
+    undef $fh;
+
+    $console = Bibliopolis::Console::HTML->new($html_template);
+    
+    $view_type = 'html';
+
+  }
+  else
+  {
+      # command line console used when running unit tests.
+  }
+  
+
+  my $fc = Bibliopolis::Site::Administrative::FrontController->new({
+	'parameters'	=> $parameters,
+	'console'	=> $console,
+	'cgi'		=> $cgi,
+	'view_type'	=> $view_type
+  });
 
   $fc->process_request();
-
 }
 
 1;
