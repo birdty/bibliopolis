@@ -18,6 +18,12 @@ sub parameters
   return @_ ? $self->{'parameters'} = shift : $self->{'parameters'};
 }
 
+sub console
+{
+  my $self = shift;
+  return @_ ? $self->{'console'} = shift : $self->{'console'};
+}
+
 sub process_request
 {
   my $self = shift;
@@ -43,7 +49,7 @@ sub process_request
   
   if ( $action )
   {
-    my $prefix = 'Bibliopolis::Site::Administrative::';
+    my $prefix = 'Bibliopolis::Site::Administrative::Control::';
 
     my $controller_class_name = $prefix;
 
@@ -62,12 +68,16 @@ sub process_request
 
     if ( ! $loaded )
     {
-	print("Content-type: text/plain\n\n");
-	print("Page Not Found.");
+	$self->console->send_message("Page Not Found or error in page." . $@);
 	return;
     }	
   
-    my $controller = $controller_class_name->new($self->parameters());
+    my $controller = $controller_class_name->new({
+	'parameters'	=> $self->parameters(),
+	'console'	=> $self->console(),
+	'view_type' 	=> $self->{'view_type'}
+      }
+    );
 
     use strict 'refs';
   
