@@ -13,16 +13,12 @@ sub find_view
 
   $view_module_name .= $args_href->{'name'};
 
-  warn("[" . $view_module_name . "]");
-
   my $retval = eval("require $view_module_name;");
 
   if ( $retval )
   {
       no strict 'refs';
-    warn('a');
       my $view = $view_module_name->new();
-    warn('b');
       use strict 'refs';
 
       return $view;
