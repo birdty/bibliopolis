@@ -18,7 +18,7 @@ sub new
       {
 	my $filename = $args_href->{'name'} . ".shell";
 	my $fh = IO::File->new($filename, "r");
-	my $shell = join("\n", <$fh>);
+	my $shell = join("", <$fh>);
 	undef $fh;
 
 	$object->{'title'} = 'Bibliopolis Administrative Site';
