@@ -21,6 +21,8 @@ sub new
 
 sub default
 {
+    my $self = shift;
+
     use MIME::Types;
 
     my $mime_types = MIME::Types->new();
@@ -28,8 +30,13 @@ sub default
 
     print("Content-type: " . $html_type . "\n\n");
 
-    print("in view..");
+    my $shell = $self->shell();
 
+    $content = "hello";
+
+    $shell->merge({'contents' => $content});
+
+    print $shell;
 }
 
 sub render
@@ -46,6 +53,33 @@ sub render
   }
 
   use strict 'refs';
+}
+
+sub shell
+{
+  my ($self, $shell) = @_;
+
+  if ( $shell )
+  {
+      $self->{'shell'} = $shell;
+      return;
+  }
+  elsif ( $self->{'shell'} )
+  {
+      return $self->{'shell'};
+  }
+  else
+  {
+    require Bibliopolis::Site::Administrative::Shell;
+    
+    $self->{'shell'} = Bibliopolis::Site::Administrative::Shell->new({
+	'name' => 'index',
+	'type' => 'html'
+    });
+    
+    return $self->{'shell'};
+
+  }
 }
 
 1;
