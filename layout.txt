@@ -39,3 +39,106 @@ so for example col-sm-6 takes up 6 of 12 columns.
   </div>
 </div>
 
+grid system based on 12 columns.
+you dynamically specify how this is split up.
+you use the max of 12 rows to implicitly specify the grid layout
+
+example:
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-3 col-md-2"><!--Column one--></div>
+
+            <div class="col-sm-9 col-md-8"><!--Column two--></div>
+
+            <div class="col-sm-12 col-md-2"><!--Column three--></div>
+
+        </div>
+
+    </div>
+
+the third column on a small sized device will wrap to the next row further vertically down the page
+
+ <div class="clearfix visible-md-block"></div> use like css clear:both tag
+
+you can use clearfix visible-*-block after for each device which breaks the layout after so many columns.
+
+example:
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4"><p>Box 1</p></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 2</p></div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 3</p></div>
+
+            <div class="clearfix visible-md-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 4</p></div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 5</p></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 6</p></div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="clearfix visible-md-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 7</p></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 8</p></div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 9</p></div>
+
+            <div class="clearfix visible-md-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 10</p></div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 11</p></div>
+
+            <div class="col-sm-6 col-md-4"><p>Box 12</p></div>
+
+        </div>
+
+    </div>
+
+* tip: For convenience choose your primary target device and create layout for
+ that device first after that add classes to make it responsive for other devices.
+
+implicit design of twitter bootstrap grid system layout algorithm.
+
+* col-sm-offset-4 add this to shove a column to the right.
+
+* you can nest the twitter grid system within itself using the usual classes.
+
+* .visible-[size]-* make element visible within specified device size range.
+  .visible-[size]-block
+
+.visible-print-block
+
+* .hidden-[size]
+
+
+
+
+
+
+
+
+
+
+
