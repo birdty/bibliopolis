@@ -13,3 +13,29 @@ div 2 b ( aligned on right )
 deals for custom web designs.
 
 layout divs according to twiter bootstrap classes
+
+.col-xs-* class to create grid columns for extra small devices like cell phones
+.col-sm-* class for small screen devices like tablets
+.col-md-* class for medium size devices like desktops
+.col-lg-* for large desktop screens
+
+maximum column widths:
+xs - Auto sm - ~62px md -~81px 	lg ~97px
+15px gutter width on side of each column.
+
+having a smaller class on a tag will have an affect on a larger side device unless an explicit class is given.
+
+order goes like this: container => row => columns with a class on each one
+so for example col-sm-6 takes up 6 of 12 columns.
+
+<div class="container">
+  <div class="row">
+        <div class="col-sm-6"><!--Column left--></div>
+        <div class="col-sm-6"><!--Column right--></div>
+  </div>
+  <div class="row">
+        <div class="col-sm-6"><!--Column left--></div>
+        <div class="col-sm-6"><!--Column right--></div>
+  </div>
+</div>
+

@@ -33,18 +33,6 @@
   <!-- Custom styles for this template -->
   <link href="dashboard.css" rel="stylesheet">
 
-  <style type="text/css">
-
-    body {
-      padding-top: 50px;
-    }
-    .starter-template {
-      padding: 40px 15px;
-      text-align: center;
-    }
-  </style>
-
-
 </head>
 
 <body>
