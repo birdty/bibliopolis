@@ -132,6 +132,10 @@ implicit design of twitter bootstrap grid system layout algorithm.
 
 * .hidden-[size]
 
+use grid system and collapsible navigation elements.
+
+
+
 
 
 
