@@ -1,0 +1,5 @@
+To enable mod_rewrite run the a2enmod [module_name] 
+generic apache module enabling command.
+
+the module_name for mod_rewrite is rewrite
+
