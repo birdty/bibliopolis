@@ -3,3 +3,8 @@ generic apache module enabling command.
 
 the module_name for mod_rewrite is rewrite
 
+* also you need to not use the RewriteLog directive changed in apache2.4
+to   LogLevel alert rewrite:trace3
+which uses the regular apache log
+
+
