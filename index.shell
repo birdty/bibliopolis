@@ -26,6 +26,27 @@
 
   <title><<title>></title>
 
+  <script type="text/javascript">
+
+    $(document).ready(
+	function()
+	{
+
+	  $('#update_progress').on('click', 
+	    function()
+	    {
+	      var width = $("#progress_bar").width();
+	      width += 4;
+	      $("#progress_bar").css('width', width + 'px');
+	    }
+	  );
+
+	}
+    );
+
+
+  </script>
+
 </head>
 
 <body>
@@ -71,6 +92,7 @@
 	    <input type="hidden" name="cmd" value="quick">
 
             <input type="text" class="form-control" id="searchbox" placeholder="Search..." name="search">
+
           </form>
 
         </div>
@@ -354,6 +376,21 @@
 	      <button class="btn">Click me</button>
 
 	  </div>
+
+	    <h2>Basic Progress Bar</h2>
+
+	    <div class="progress">
+
+	      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" id="progress_bar" style="width:80%">
+
+		<span class="sr-only">70% Complete</span>
+
+	      </div>
+
+	  </div>
+
+	  <button class="btn" id="update_progress">Update Progress</button>
+
 
 	</div>
 
