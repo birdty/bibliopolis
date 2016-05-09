@@ -71,7 +71,6 @@
 	    <input type="hidden" name="cmd" value="quick">
 
             <input type="text" class="form-control" id="searchbox" placeholder="Search..." name="search">
-
           </form>
 
         </div>
