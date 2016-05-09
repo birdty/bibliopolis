@@ -1,0 +1,22 @@
+1.)
+To enable mod_rewrite run the a2enmod [module_name] 
+generic apache module enabling command.
+
+the module_name for mod_rewrite is rewrite
+
+2.)
+* also you need to not use the RewriteLog directive changed in apache2.4
+to   LogLevel alert rewrite:trace3
+which uses the regular apache log
+
+3.)
+mod_rewrite apache configuration
+
+RewriteEngine On
+LogLevel alert rewrite:trace3
+RewriteCond %{REQUEST_URI} !(.*)\.(css|js|htc|pdf|jpg|jpeg|gif|png|ico)$ [NC]
+RewriteRule ^(.*)$ /engine.pl?request=$1 [L,QSA]
+
+# the RewriteCond above excludes resources from the mod rewrite 
+# rewrite rule
+

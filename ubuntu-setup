@@ -1,0 +1,3 @@
+I adjusted the site to change it directory to the directory it's hosted on on the server.
+I tried to use Modperl::PerRunPrefork as the perl handler to no luck on debian.
+So I just changed the base directory when the site was loaded in the script which starts the front controller.
