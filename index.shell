@@ -16,10 +16,10 @@
 
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+  <link href="assets/css/get-shit-done.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="dashboard.css"> 
   
-  <link rel="stylesheet" href="assets/css/git-shit-done.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
 
 <body>
 
- <nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-default navbar-fixed-top">
 
       <div class="container-fluid">
 
@@ -70,7 +70,7 @@
 
 	    <input type="hidden" name="cmd" value="quick">
 
-            <input type="text" class="form-control" placeholder="Search..." name="search">
+            <input type="text" class="form-control" id="searchbox" placeholder="Search..." name="search">
 
           </form>
 

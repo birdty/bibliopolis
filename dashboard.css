@@ -29,6 +29,12 @@ body {
   border-radius: 0;
 }
 
+#searchbox
+{
+  border: 1px solid black;
+  padding: 5px;
+  height: 24px;
+}
 
 /*
  * Sidebar
