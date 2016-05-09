@@ -32,18 +32,16 @@
 	function()
 	{
 
-	  $('#update_progress').on('click', 
-	    function()
-	    {
-	      var width = $("#progress_bar").width();
-	      width += 4;
-	      $("#progress_bar").css('width', width + 'px');
-	    }
-	  );
 
 	}
     );
 
+    function update_progress()
+    {
+      var width = $("#progress_bar").width();
+      width += 4;
+      $("#progress_bar").css('width', width + 'px');
+    }
 
   </script>
 
@@ -389,8 +387,7 @@
 
 	  </div>
 
-	  <button class="btn" id="update_progress">Update Progress</button>
-
+	  <button class="btn" id="update_progress" onClick="update_progress(); return false;">Update Progress</button>
 
 	</div>
 
