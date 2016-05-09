@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+sub run;
+
+run();
+
+sub run
+{
+	my $file = $ARGV[0];
+	my $log;
+	
+	$log = $ARGV[1];
+
+	if ( ! $log ) {
+		$log = qq["o - no comment"];
+	}
+
+	system("git add $file");
+
+	my $commit_command = qq[git commit -m $log $file];
+
+	system($commit_command);
+
+	system("git push");
+}
+
