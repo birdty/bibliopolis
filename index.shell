@@ -68,6 +68,7 @@
 
 	    <input type="hidden" name="cmd" value="quick">
 
+
             <input type="text" class="form-control" placeholder="Search..." name="search">
 
           </form>
