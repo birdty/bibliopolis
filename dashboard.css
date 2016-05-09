@@ -27,6 +27,11 @@ body {
 
 .btn {
   border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #searchbox
