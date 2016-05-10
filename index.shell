@@ -389,6 +389,16 @@
 
 	  <button class="btn" id="update_progress" onClick="update_progress(); return false;">Update Progress</button>
 
+	  <h2>Pagination</h2>
+
+	  <ul class="pagination pagination-sm">
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">5</a></li>
+	  </ul>
+
 	</div>
 
       </div>
