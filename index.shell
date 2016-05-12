@@ -31,8 +31,7 @@
     $(document).ready(
 	function()
 	{
-
-
+	  
 	}
     );
 
@@ -67,7 +66,7 @@
 
           </button>
 
-          <a class="navbar-brand" href="#">Administrator</a>
+          <a class="navbar-brand" href="#">Bibliopolis</a>
 
         </div>
 
@@ -107,11 +106,13 @@
 
           <ul class="nav nav-sidebar">
 
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
 
             <li><a href="#">Reports</a></li>
 
             <li><a href="#">Analytics</a></li>
+
+	    <li><a href="#">Import</a></li>
 
             <li><a href="#">Export</a></li>
 
@@ -119,25 +120,19 @@
 
           <ul class="nav nav-sidebar">
 
-            <li><a href="">Nav item</a></li>
+            <li><a href="/inventory">Manage Inventory</a></li>
 
-            <li><a href="">Nav item again</a></li>
+            <li><a href="/customers">Manage Customers</a></li>
 
-            <li><a href="">One more nav</a></li>
-
-            <li><a href="">Another nav item</a></li>
-
-            <li><a href="">More navigation</a></li>
+            <li><a href="/invoices">Manage Invoices</a></li>
 
           </ul>
 
           <ul class="nav nav-sidebar">
 
-            <li><a href="">Nav item again</a></li>
+            <li><a href="/shipping">Manage Shipping</a></li>
 
-            <li><a href="">One more nav</a></li>
-
-            <li><a href="">Another nav item</a></li>
+            <li><a href="/salestax">Manage Sales Tax</a></li>
 
           </ul>
 
@@ -145,47 +140,34 @@
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h1 class="page-header">Welcome</h1>
+          <h1 class="page-header">Welcome - Dashboard</h1>
 
           <div class="row placeholders">
 
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="col-xs-6 col-sm-4 placeholder">
 
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-
-              <h4>Label</h4>
-
-              <span class="text-muted">Something else</span>
-
-            </div>
-
-            <div class="col-xs-6 col-sm-3 placeholder">
-
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-
-              <h4>Label</h4>
-
-              <span class="text-muted">Something else</span>
+	      <a href="/inventory">
+		<img src="assets/img/upload_inventory.jpeg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" border="0">
+		<h4>Manage Inventory</h4>
+	      </a>
 
             </div>
 
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="col-xs-6 col-sm-4 placeholder">
 
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-
-              <h4>Label</h4>
-
-              <span class="text-muted">Something else</span>
+	      <a href="/customers">
+              <img src="assets/img/upload_customers.jpeg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Manage Customers</h4>
+	      </a>
 
             </div>
 
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="col-xs-6 col-sm-4 placeholder">
 
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-
-              <h4>Label</h4>
-
-              <span class="text-muted">Something else</span>
+	      <a href="/invoices">
+              <img src="assets/img/invoices.jpeg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Manage Invoices</h4>
+	      </a>
 
             </div>
 
