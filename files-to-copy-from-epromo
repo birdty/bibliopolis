@@ -1,0 +1,7 @@
+modules to copy from epromo code base.
+rename Epromo prefix to Bibliopolis
+
+Epromo::DB::StatementCache
+Epromo::Buffer
+Epromo::Date
+Epromo::Lang
