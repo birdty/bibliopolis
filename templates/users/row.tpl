@@ -1,19 +1,20 @@
-<div class="row">
+<tr>
 
-  <div class="col-xs-3">
+  <td data-title="First Name">
 	<<first_name>>
-  </div>
+  </td>
 
-  <div class="col-xs-3">
+  <td data-title="Last Name">
 	<<last_name>>
-  </div>
+  </td>
 
-  <div class="col-xs-3">
+  <td data-title="Username">
 	<<username>>
-  </div>
+  </td>
 
-  <div class="col-xs-3">
-      <input type="button" class="btn">
-  </div>
+  <td>
+    <button type="button" class="btn btn-default btn-sm">Edit</button>
 
-</div>
+  </td>
+
+</tr>
