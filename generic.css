@@ -1,25 +1,27 @@
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 	
 	/* Force table to not be like tables anymore */
-	#no-more-tables table, 
-	#no-more-tables thead, 
-	#no-more-tables tbody, 
-	#no-more-tables th, 
-	#no-more-tables td, 
-	#no-more-tables tr { 
+	#responsive-tables table, 
+	#responsive-tables thead, 
+	#responsive-tables tbody, 
+	#responsive-tables th, 
+	#responsive-tables td, 
+	#responsive-tables tr { 
 		display: block; 
 	}
  
 	/* Hide table headers (but not display: none;, for accessibility) */
-	#no-more-tables thead tr { 
+	#responsive-tables thead tr { 
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
  
-	#no-more-tables tr { border: 1px solid #ccc; }
+	#responsive-tables tr {
+	  border: 1px solid #ccc;
+	}
  
-	#no-more-tables td { 
+	#responsive-tables td { 
 		/* Behave  like a "row" */
 		border: none;
 		border-bottom: 1px solid #eee; 
@@ -29,7 +31,7 @@
 		text-align:left;
 	}
  
-	#no-more-tables td:before { 
+	#responsive-tables td:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
@@ -45,5 +47,5 @@
 	/*
 	Label the data
 	*/
-	#no-more-tables td:before { content: attr(data-title); }
+	#responsive-tables td:before { content: attr(data-title); }
 }

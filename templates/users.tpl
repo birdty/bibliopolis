@@ -18,7 +18,7 @@
 
 </div>
 
-<section id="no-more-tables">
+<section id="responsive-tables">
 
   <table class="table table-bordered table-striped table-condensed cf" summary="Users in your account.">
 
