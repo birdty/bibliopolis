@@ -13,8 +13,9 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-default btn-sm">Edit</button>
-
+    <form action="/users/edit/<<id>>">
+    <button type="submit" class="btn btn-default btn-sm">Edit</button>
+    </form>
   </td>
 
 </tr>

@@ -27,7 +27,7 @@ body {
 
 .btn {
   border-radius: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .btn:hover {
@@ -91,6 +91,7 @@ body {
   padding: 20px;
   padding-top: 40px;
 }
+
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
