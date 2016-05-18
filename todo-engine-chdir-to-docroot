@@ -1,0 +1,2 @@
+look at the environment variable SCRIPT_FILENAME remove the ending file name and use the pat
+to chdir in engine.pl
