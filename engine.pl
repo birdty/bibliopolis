@@ -27,6 +27,11 @@ try
 	$parameters->{$param_name} = $value;
     }
 
+    if (  ! $parameters->{'request'} ) {
+      my($name, $value) = split(/=/, $cgi->env_query_string());
+      $parameters->{'request'} = $value;
+    }
+
     # cgi will be an implementation detail
     # for example one use case is an action will
     # call the front controller to get the location of an uploaded file

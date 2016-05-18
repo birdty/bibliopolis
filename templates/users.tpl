@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="generic.css"> 
 
 <div class="container-fluid">
 
@@ -11,7 +10,7 @@
       </div>
 
       <div class="pull-right">
-              <a href="/user/add">Add User</a>
+              <a href="/users/addform">Add User</a>
       </div>
 
   </div>
