@@ -1,0 +1,3 @@
+o - depending upon the view type passed to the front controller
+check first if a module with the view type in the name exists and hand over control to it, otherwise
+call the normal default controller method ( which can deliver any random content type it wants )
