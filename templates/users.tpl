@@ -24,6 +24,7 @@
     <thead class="cf">
 
       <tr>
+	<td>&nbsp;</td>
 	<td>First Name</td>
 	<td>Last Name</td>
 	<td>Username</td>

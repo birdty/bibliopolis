@@ -1,5 +1,13 @@
 <tr>
 
+  <td>
+    <a href="/users/delete/<<id>>">
+      <div class="glyphicon glyphicon-remove-sign">
+      </div>
+    </a>
+
+  </td>
+
   <td data-title="First Name">
 	<<first_name>>
   </td>
