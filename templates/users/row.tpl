@@ -13,7 +13,7 @@
   </td>
 
   <td>
-    <form action="/users/edit/<<id>>">
+    <form action="/users/edit_form/<<id>>">
     <button type="submit" class="btn btn-default btn-sm">Edit</button>
     </form>
   </td>

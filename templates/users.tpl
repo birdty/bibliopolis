@@ -10,7 +10,7 @@
       </div>
 
       <div class="pull-right">
-              <a href="/users/add">Add User</a>
+              <a href="/users/add_form">Add User</a>
       </div>
 
   </div>
