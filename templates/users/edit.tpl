@@ -1,7 +1,7 @@
 
 <h3 class="page-header">Edit User</h3>
 
-<form action="/users/add" method="post">
+<form action="/users/save" method="post">
   <fieldset class="form-group">
     <label for="example_first_name">First Name</label>
     <input type="text" name="first_name" class="form-control" id="example_first_name" placeholder="John" value="<<first_name>>">

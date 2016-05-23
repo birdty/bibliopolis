@@ -1,4 +1,17 @@
+<script type="text/javascript" src="assets/js/table.js"></script>
+
 <script type="text/javascript">
+
+var user_table;
+
+$('document').ready(
+
+    function()
+    {
+      user_table = new Table({'id': 'users'});
+      user_table.sort();
+    }
+);
 
 function add_user_form_submitted()
 {
@@ -26,13 +39,20 @@ function add_user_form_submitted()
 	    if ( response['success'] == 1 )
 	    {
 		hideModal('add_user_modal');
+		user_table.add_row_from(response); 
+		user_table.sort();
 	    }
 	    else
 	    {
 		alert('Could not add User.');
+		hideModal('add_user_modal');
 	    }
 	},
-	error: function(){ alert("Could not add user."); },
+	error: function() 
+	{
+	  alert("Error occurred when adding user.");
+	  hideModal('add_user_modal');
+	},
 	complete: function() { },
 	async: false
       }
@@ -41,6 +61,39 @@ function add_user_form_submitted()
     return false;
 }
 
+function on_delete_row_clicked(id)
+{
+    var data = {};
+
+    data['id'] = id;
+
+    $.ajax(
+      {
+	type: 'POST',
+	url: '/users/delete/' + id,
+	dataType: 'json',
+	data: data,
+	success: function(response){
+	    if ( response['success'] == 1 )
+	    {
+		user_table.remove_row(id); 
+	    }
+	    else
+	    {
+		alert('Could not remove User.');
+	    }
+	},
+	error: function() 
+	{
+	  alert("Error occurred when removing user.");
+	},
+	complete: function() { },
+	async: false
+      }
+    );   
+
+    return false;
+}
 
 </script>
 
@@ -67,15 +120,15 @@ function add_user_form_submitted()
 
 <section id="responsive-tables">
 
-  <table class="table table-bordered table-striped table-condensed cf" summary="Users in your account.">
+  <table class="table table-bordered table-striped table-condensed cf" id="users" summary="Users in your account.">
 
     <thead class="cf">
 
       <tr>
-	<td>&nbsp;</td>
-	<td>First Name</td>
-	<td>Last Name</td>
-	<td>Username</td>
+	<th>&nbsp;</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Username</th>
       <tr>
 
       <tbody>
@@ -88,9 +141,6 @@ function add_user_form_submitted()
 
 </section>
 
-
-
-
 <!-- Add User  -->
 <div id="add_user_modal" class="modal fade" role="dialog">
  
@@ -98,30 +148,36 @@ function add_user_form_submitted()
 
     <!-- Modal content-->
     <div class="modal-content">
+
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	<h4 class="modal-title">Modal Header</h4>
       </div>
 
       <div class="modal-body">
 
-	<form action="/users/add" method="post">
+	<form action="/users/add" method="post" onSubmit="add_user_form_submitted(); return false;">
+
 	  <fieldset class="form-group">
 	    <label for="first_name">First Name</label>
 	    <input type="text" name="first_name" class="form-control" id="first_name" placeholder="John">
 	  </fieldset>
+
 	  <fieldset class="form-group">
 	    <label for="last_name">First Name</label>
 	    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Doe">
 	  </fieldset>
+
 	  <fieldset class="form-group">
 	    <label for="username">Username</label>
 	    <input type="text" name="username" class="form-control" id="username" placeholder="doejohn">
 	  </fieldset>
+
 	  <fieldset class="form-group">
 	    <label for="email_address">Email Address</label>
 	    <input type="email" name="email_address" class="form-control" id="email_address" placeholder="me@example.com">
 	  </fieldset>
+
 	  <fieldset class="form-group">
 	    <label for="password">Password</label>
 	    <input type="password" name="password" class="form-control" id="password" placeholder="doejohn">
@@ -134,10 +190,10 @@ function add_user_form_submitted()
 
       </div>
 
-
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onClick="add_user_form_submitted();">Close</button>
+        <button type="button" class="btn btn-default">Close</button>
       </div>
+
     </div>
 
   </div>
