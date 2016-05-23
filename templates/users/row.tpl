@@ -1,7 +1,7 @@
-<tr>
+<tr id="<<id>>">
 
   <td>
-    <a href="/users/delete/<<id>>">
+    <a href="/users/delete/<<id>>" onClick="return on_delete_row_clicked(<<id>>);">
       <div class="glyphicon glyphicon-remove-sign">
       </div>
     </a>
