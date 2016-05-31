@@ -13,6 +13,16 @@ $('document').ready(
     }
 );
 
+function on_add_user_clicked()
+{
+  $($('#add_user').prop('elements')).each(function(){
+      if ( $(this).val('name') != 'account_id' )
+      {
+	$(this).val('');
+      }
+  });
+}
+
 function add_user_form_submitted()
 {
     var data = {};
@@ -38,9 +48,9 @@ function add_user_form_submitted()
 	success: function(response){
 	    if ( response['success'] == 1 )
 	    {
-		hideModal('add_user_modal');
 		user_table.add_row_from(response); 
 		user_table.sort();
+		hideModal('add_user_modal');
 	    }
 	    else
 	    {
@@ -111,7 +121,7 @@ function on_delete_row_clicked(id)
     </div>
 
     <div class="pull-right">
-	  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_user_modal">Add User</button>
+	  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_user_modal" onClick="on_add_user_clicked();">Add User</button>
     </div>
 
   </div>
@@ -156,7 +166,7 @@ function on_delete_row_clicked(id)
 
       <div class="modal-body">
 
-	<form action="/users/add" method="post" onSubmit="add_user_form_submitted(); return false;">
+	<form action="/users/add" method="post" onSubmit="add_user_form_submitted(); return false;" id="add_user">
 
 	  <fieldset class="form-group">
 	    <label for="first_name">First Name</label>
