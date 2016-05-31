@@ -6,7 +6,7 @@ var user_table;
 
 $('document').ready(
 
-    function()
+    function() 
     {
       user_table = new Table({'id': 'users'});
       user_table.sort();
@@ -164,7 +164,7 @@ function on_delete_row_clicked(id)
 	  </fieldset>
 
 	  <fieldset class="form-group">
-	    <label for="last_name">First Name</label>
+	    <label for="last_name">Last Name</label>
 	    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Doe">
 	  </fieldset>
 

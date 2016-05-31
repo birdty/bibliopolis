@@ -21,8 +21,7 @@ function Table(args)
 
 Table.prototype.sort = function()
 {
-    var sorting = [[1,0],[2,0],[3,0]]; 
-    $("#" + this._id).trigger("sorton",[sorting]); 
+    $("#" + this._id).tablesorter({ sortList:[[2,0],[1,0]] })
 }
 
 Table.prototype.add_row_from = function(response)
