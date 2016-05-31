@@ -85,6 +85,7 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="/">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
 
           </ul>
 
@@ -112,13 +113,13 @@
 
             <li class="active"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
 
-            <li><a href="#">Reports</a></li>
+            <li><a href="/reports">Reports</a></li>
 
-            <li><a href="#">Analytics</a></li>
+            <li><a href="/analytics">Analytics</a></li>
 
-	    <li><a href="#">Import</a></li>
+	    <li><a href="/import">Import</a></li>
 
-            <li><a href="#">Export</a></li>
+            <li><a href="/export">Export</a></li>
 
           </ul>
 
