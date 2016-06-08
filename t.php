@@ -40,37 +40,24 @@
 
 		$x509cert = "-----BEGIN CERTIFICATE-----\n" . $x509certNode->nodeValue . "\n" . "-----END CERTIFICATE-----";
 
-
-		if ( ! strcmp($x509cert, $okta_cert) ) { 
-
-			print("certs equal");
-
-		}
-		else
-		{
-			print("\nnot equal\n\n");
-			
-			print "okta cert: [" . $okta_cert . "]\n";
-			print "in message: [" . $x509cert . "]\n";
-
-#			file_put_contents('l.cert', $x509cert);
-		}
-
 		$publicKey = openssl_get_publickey($x509cert);
 
 		$signature = base64_decode($signatureValueNode->nodeValue);
 		
-		print("\nworking dir: " . getcwd() . "\n");
-
 		print("\n\nx509 certificate: [" . $x509cert . "]\n");
 
 		print("\n\nsignature: [" . $signatureValueNode->nodeValue . "]\n");
+
+		file_put_contents('sig.txt', $signature);
 
 		print("\n\npublic key: " . $publicKey . "\n\n");
 
 		print("\n\nsigned Info node canonicalized to a string: [" . $signedInfoNodeCanonicalized) . "]\n\n";
 
-		$ok = openssl_verify($signedInfoNodeCanonicalized, $signature, $publicKey);
+		$ok = openssl_verify($signedInfoNodeCanonicalized, $signature, $publicKey, "sha256WithRSAEncryption");
+
+#sha1WithRSAEncryption
+
 
 		if ( $ok ) 
 		{
