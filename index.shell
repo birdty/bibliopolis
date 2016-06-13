@@ -37,10 +37,10 @@
   <script type="text/javascript">
 
     $(document).ready(
-	function()
-	{
-	  
-	}
+	  function()
+	  {
+		
+	  }
     );
 
     function update_progress()
@@ -76,9 +76,9 @@
 
           <a class="navbar-brand" href="#">Bibliopolis</a>
 
-	  <a class="navbar-brand navbar-welcome">Welcome, <<name>></a>
+		  <a class="navbar-brand navbar-welcome">Welcome, <<name>></a>
 
-        </div>
+		</div>
 
         <div id="navbar" class="navbar-collapse collapse">
 
@@ -91,7 +91,7 @@
 
           <form class="navbar-form navbar-right" action="http://www.ballonlinestore.com/search.i">
 
-	    <input type="hidden" name="cmd" value="quick">
+			<input type="hidden" name="cmd" value="quick">
 
             <input type="text" class="form-control" id="searchbox" placeholder="Search..." name="search">
 
@@ -117,7 +117,7 @@
 
             <li><a href="/analytics">Analytics</a></li>
 
-	    <li><a href="/import">Import</a></li>
+			<li><a href="/import">Import</a></li>
 
             <li><a href="/export">Export</a></li>
 
@@ -131,7 +131,7 @@
 
             <li><a href="/invoices">Manage Invoices</a></li>
 
-	    <li><a href="/users">Manage Users</a></li>
+			<li><a href="/users">Manage Users</a></li>
 
           </ul>
 
@@ -147,9 +147,9 @@
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-	  <<contents>>  
+			<<contents>>  
 
-	</div>
+		</div>
 
       </div>
 
